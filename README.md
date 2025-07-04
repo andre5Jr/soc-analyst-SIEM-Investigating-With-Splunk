@@ -161,3 +161,38 @@ Enable base64 decoding plugins to auto-flag suspicious scripts.
 
 Correlate with EDR and network logs to track payload delivery.
 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T1-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T1-2.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T2-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T2-2.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T3-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T3-2.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T4-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T5-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T5-2.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T6-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T7-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T8-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T9-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T9-2.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T9-3.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T9-4.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T9-5.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Investigating-With-Splunk/blob/c8fdb45e0548ffe9dc2a4010364f411ef18810e5/T9-6.png) 
