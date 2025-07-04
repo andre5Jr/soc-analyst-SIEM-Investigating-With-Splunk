@@ -38,11 +38,6 @@ Task Breakdown
 
 Use Splunk Search: index=main | stats count
 
-✅ Outcome:
-Total Events Ingested: 1030
-
-📸 Screenshot Space:
-
 ✏️ Task 2: Identify the Backdoor Username
 ⭕️ Objective: Find the unauthorized user created by the attacker.
 ⭕️ Method:
@@ -51,11 +46,6 @@ Query for user creation events:
 index=main EventCode=4720
 
 Check TargetUserName field.
-
-✅ Outcome:
-Backdoor Username: backup_admin
-
-📸 Screenshot Space:
 
 ✏️ Task 3: Locate Registry Key Change
 ⭕️ Objective: Identify the registry path modified for persistence.
@@ -66,11 +56,6 @@ index=main Registry
 
 Filter by keywords like backup_admin
 
-✅ Outcome:
-Registry Path: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList\backup_admin
-
-📸 Screenshot Space:
-
 ✏️ Task 4: Detect Impersonated User
 ⭕️ Objective: Find which legitimate user account was targeted for impersonation.
 ⭕️ Method:
@@ -79,11 +64,6 @@ Investigate suspicious logon attempts:
 index=main EventCode=4648
 
 Look for attempts using high-privilege usernames.
-
-✅ Outcome:
-Impersonated User: Administrator
-
-📸 Screenshot Space:
 
 ✏️ Task 5: Command Used for Remote Backdoor Creation
 ⭕️ Objective: Identify the command used to create the backdoor user remotely.
@@ -94,23 +74,12 @@ index=main EventCode=4688
 
 Check for net user or psexec commands.
 
-✅ Outcome:
-Command:
-net user backup_admin P@ssw0rd123 /add
-
-📸 Screenshot Space:
-
 ✏️ Task 6: Count Login Attempts by Backdoor User
 ⭕️ Objective: Determine how often the attacker tried logging in with the new user.
 ⭕️ Method:
 
 Search for logon attempts:
 index=main TargetUserName="backup_admin" EventCode=4624 OR EventCode=4625
-
-✅ Outcome:
-Login Attempts: 6
-
-📸 Screenshot Space:
 
 ✏️ Task 7: Identify Infected Host Running PowerShell
 ⭕️ Objective: Name the host that executed suspicious PowerShell commands.
@@ -121,22 +90,12 @@ index=main powershell
 
 Filter for suspicious commands.
 
-✅ Outcome:
-Infected Host: DC1-THM-AD
-
-📸 Screenshot Space:
-
 ✏️ Task 8: Count of Malicious PowerShell Events
 ⭕️ Objective: Count how many PowerShell logs were generated from the malicious execution.
 ⭕️ Method:
 
 Search:
 index=main host="DC1-THM-AD" process="powershell.exe"
-
-✅ Outcome:
-PowerShell Events: 20
-
-📸 Screenshot Space:
 
 ✏️ Task 9: Identify the Full URL in PowerShell Request
 ⭕️ Objective: Find the full web address used in the PowerShell script.
@@ -145,12 +104,6 @@ PowerShell Events: 20
 Extract base64 strings and decode manually or via script.
 
 Look inside CommandLine field for encoded strings.
-
-✅ Outcome:
-Malicious URL:
-http://maliciousdomain.live/payload.ps1
-
-📸 Screenshot Space:
 
 🔍 Analysis and Reflection
 💡 Challenges Faced:
