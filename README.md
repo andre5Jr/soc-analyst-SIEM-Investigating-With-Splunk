@@ -32,80 +32,60 @@ Project Overview
 This investigation simulates a real-world SOC analysis using Splunk to detect malicious activity across compromised Windows hosts. The task was prompted by suspicious behaviors observed by a fellow analyst, with logs indicating that an attacker created a backdoor user, tampered with registry keys, and executed obfuscated PowerShell scripts. All logs were centralized in Splunk under the main index for triage.
 
 Task Breakdown
+
 ✏️ Task 1: Count Ingested Events
 
 ⭕️ Objective: Determine how many events were ingested into the main index.
 
-⭕️ Method:
-
-Use Splunk Search: index=main | stats count
+⭕️ Method: Use Splunk Search: index=main | stats count
 
 ✏️ Task 2: Identify the Backdoor Username
+
 ⭕️ Objective: Find the unauthorized user created by the attacker.
-⭕️ Method:
 
-Query for user creation events:
-index=main EventCode=4720
-
-Check TargetUserName field.
+⭕️ Method: Query for user creation events: index=main EventCode=4720 & Check TargetUserName field.
 
 ✏️ Task 3: Locate Registry Key Change
+
 ⭕️ Objective: Identify the registry path modified for persistence.
-⭕️ Method:
 
-Search registry modification logs:
-index=main Registry
-
-Filter by keywords like backup_admin
+⭕️ Method: Search registry modification logs: index=main Registry & Filter by keywords like backup_admin
 
 ✏️ Task 4: Detect Impersonated User
+
 ⭕️ Objective: Find which legitimate user account was targeted for impersonation.
-⭕️ Method:
 
-Investigate suspicious logon attempts:
-index=main EventCode=4648
-
-Look for attempts using high-privilege usernames.
+⭕️ Method:Investigate suspicious logon attempts: index=main EventCode=4648 & Look for attempts using high-privilege usernames.
 
 ✏️ Task 5: Command Used for Remote Backdoor Creation
+
 ⭕️ Objective: Identify the command used to create the backdoor user remotely.
-⭕️ Method:
 
-Look for event logs showing remote command execution:
-index=main EventCode=4688
-
-Check for net user or psexec commands.
+⭕️ Method: Look for event logs showing remote command execution: index=main EventCode=4688 & Check for net user or psexec commands.
 
 ✏️ Task 6: Count Login Attempts by Backdoor User
-⭕️ Objective: Determine how often the attacker tried logging in with the new user.
-⭕️ Method:
 
-Search for logon attempts:
-index=main TargetUserName="backup_admin" EventCode=4624 OR EventCode=4625
+⭕️ Objective: Determine how often the attacker tried logging in with the new user.
+
+⭕️ Method: Search for logon attempts: index=main TargetUserName="backup_admin" EventCode=4624 OR EventCode=4625
 
 ✏️ Task 7: Identify Infected Host Running PowerShell
+
 ⭕️ Objective: Name the host that executed suspicious PowerShell commands.
-⭕️ Method:
 
-Search for PowerShell usage logs:
-index=main powershell
-
-Filter for suspicious commands.
+⭕️ Method:Search for PowerShell usage logs: index=main powershell & Filter for suspicious commands.
 
 ✏️ Task 8: Count of Malicious PowerShell Events
-⭕️ Objective: Count how many PowerShell logs were generated from the malicious execution.
-⭕️ Method:
 
-Search:
-index=main host="DC1-THM-AD" process="powershell.exe"
+⭕️ Objective: Count how many PowerShell logs were generated from the malicious execution.
+
+⭕️ Method: Search: index=main host="DC1-THM-AD" process="powershell.exe"
 
 ✏️ Task 9: Identify the Full URL in PowerShell Request
+
 ⭕️ Objective: Find the full web address used in the PowerShell script.
-⭕️ Method:
 
-Extract base64 strings and decode manually or via script.
-
-Look inside CommandLine field for encoded strings.
+⭕️ Method: Extract base64 strings and decode manually or via script & Look inside CommandLine field for encoded strings.
 
 🔍 Analysis and Reflection
 💡 Challenges Faced:
