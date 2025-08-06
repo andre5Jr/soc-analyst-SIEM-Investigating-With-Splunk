@@ -33,7 +33,9 @@ This investigation simulates a real-world SOC analysis using Splunk to detect ma
 
 Task Breakdown
 ✏️ Task 1: Count Ingested Events
+
 ⭕️ Objective: Determine how many events were ingested into the main index.
+
 ⭕️ Method:
 
 Use Splunk Search: index=main | stats count
